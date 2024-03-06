@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Todo</title>
+</head>
+<body>
+<style>
+    form{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    }
+    div{
+    width:300px;
+    margin-top: 30px;
+    }
+    button{
+    margin-top:30px;
+    padding: 10px 5px 10px 5px;
+    }
+</style>
+        <form method="POST" action='create/'>
+             {% csrf_token %}
+             {{form}}
+        <button type="submit">Create ToDo</button>
+        </form>
+</body>
+</html>

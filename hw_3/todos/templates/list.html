@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Pacifico&family=Varela+Round&display=swap" rel="stylesheet">
+
+    <title>List with Todos</title>
+</head>
+<body>
+<style>
+    .pacifico-regular {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.create {
+   position:fixed;
+   left: 95%;
+   top:90%;
+}
+
+    .create img{
+    height:40px;
+    width:40px;
+     }
+
+    body{
+   font-family: "Varela Round", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+    background-color:#cfe2f3;}
+    *{
+    margin:0;
+    padding:0;}
+
+    .main-block{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    }
+    .todo{
+-webkit-box-shadow: 8px 11px 8px 0px rgba(82, 167, 232, 0.2);
+-moz-box-shadow: 8px 11px 8px 0px rgba(82, 167, 232, 0.2);
+box-shadow: 8px 11px 8px 0px rgba(82, 167, 232, 0.2);
+    border: 3px #16537e solid;
+    border-radius:20px;
+    font-family: "Varela Round", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+     width:250px;
+     padding-left: 50px;
+     padding-right: 50px;
+     background-color:#057ad2;
+     padding-top: 30px;
+     padding-bottom: 30px;
+     margin-top: 30px;
+
+    }
+    a {
+    text-decoration:none;
+    color:#000;
+    }
+    .main-block a {
+    padding-left: 20px;}
+    p{
+    padding-top:20px;}
+    .control{
+    padding-top:30px;
+    }
+    .control{
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    justify-content:end;
+    align-items:end;
+    }
+    .control img{
+    padding-left:20px;
+    height: 30px;
+    width: 30px;
+    }
+</style>
+<a href="createAction/{{list.pk}}" class="create">Create</a>
+<div class="main-block">
+    <h1>Todo List</h1>
+          {%for task in todo%}
+    <div class="todo">
+          <h2>{{task.title}}</h2>
+          <p>{{task.description}}</p>
+        <div class="control">
+            <a href="updateAction/{{task.pk}}">Update</a>
+            <a href="done/{{task.pk}}">Done</a>
+        </div>
+           </div>
+          {%endfor%}
+    </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+    <title>Movies&articles</title>
+</head>
+<body>
+<style>
+    h1{
+    padding-left:90px;
+
+  font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+
+  font-style: normal;
+}
+    h3{
+    font-weight:600;
+    font-size:30px;
+    font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+
+  font-style: normal;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 30px;
+    }
+    h4{
+    font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+
+  font-style: normal;
+    padding-left: 20px;
+    padding-right: 20px;
+    }
+    div{
+    font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+
+  font-style: normal;
+    margin-left:60px;
+    background-color:#2986cc;
+    width: 400px;
+    padding-bottom: 15px;
+    border-radius:10px;
+    }
+</style>
+
+         <h1>Movies & Articles</h1>
+         {% for movie in movies %}
+        <div>
+         <h3>{{movie.title}}</h3>
+         <h4>Producer - {{movie.producer}}</h4>
+          <h4>description - {{movie.description}}</h4>
+           <h4>Duration - {{movie.duration}} s</h4>
+            </div>
+         {% endfor %}
+
+ {% for article in articles %}
+        <div>
+         <h3>{{article.title}}</h3>
+         <h4>text - {{article.text}}</h4>
+          <h4>author - {{article.author}}</h4>
+            </div>
+         {% endfor %}
+
+
+        <div>
+         <h3>{{movie_single.title}}</h3>
+         <h4>Producer - {{movie_single.producer}}</h4>
+          <h4>description - {{movie_single.description}}</h4>
+           <h4>duration - {{movie_single.duration}} s</h4>
+            </div>
+
+
+        <div>
+         <h3>{{article_single.title}}</h3>
+         <h4>text - {{article_single.text}}</h4>
+          <h4>author - {{article_single.author}}</h4>
+            </div>
+
+</body>
+</html>
