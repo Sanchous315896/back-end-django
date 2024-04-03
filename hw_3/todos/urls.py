@@ -20,7 +20,13 @@ urlpatterns = [
     path('updateList/<str:pk>', views.updateList),
     path('updateList/update/<str:pk>', views.updateListTotal),
     path('doneList/<str:pk>', views.doneList),
+    path('reg/', views.reg),
+    path('reg/registrate/', views.registrate),
+    path('auth/', views.auth),
+    path('auth/authorize/', views.authorize, name='login'),
+    path('logout', views.logout_view, name='logout'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#

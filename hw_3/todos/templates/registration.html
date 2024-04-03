@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+<style>
+    form{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    }
+    div{
+    width:300px;
+    margin-top: 30px;
+    }
+    button{
+    margin-top:30px;
+    padding: 10px 5px 10px 5px;
+    }
+</style>
+        <form method="POST" action='registrate/'>
+             {% csrf_token %}
+             {{form}}
+        <button type="submit">Register</button>
+        </form>
+<a href="/auth/">Authorize</a>
+</body>
+</html>

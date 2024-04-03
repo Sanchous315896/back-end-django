@@ -86,21 +86,18 @@ box-shadow: 8px 11px 8px 0px rgba(82, 167, 232, 0.2);
     height: 30px;
     width: 30px;
     }
+    .logout{
+      color:red;
+    }
 </style>
-<a href="createList/" class="create"><img src="static/img/plus.png"></a>
 <div class="main-block">
              <h1>Todo List</h1>
+             <h3>{{user}}</h3>
 
-          {%for task in todo%}
-    <div class="todo">
-          <h2><a href="showList/{{task.pk}}">{{task.title}}</a></h2>
-          <p>{{task.description}}</p>
-        <div class="control">
-            <a href="updateList/{{task.pk}}"><img src="static/img/create.png"></a>
-            <a href="doneList/{{task.pk}}"><img src="static/img/check-mark.png"></a>
-        </div>
-           </div>
-          {%endfor%}
+
+    
+         
+    <a class="logout" href="{% url 'logout' %}">Log out</a>
     </div>
 </body>
 </html>

@@ -3,7 +3,7 @@ from django.shortcuts import render
 from movie.models import Movie, Article
 
 
-# Create your views here.
+
 def movies(request):
     movies = Movie.objects.all()
     context = {'movies': movies}
